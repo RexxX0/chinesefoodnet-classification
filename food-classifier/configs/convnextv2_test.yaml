@@ -1,0 +1,42 @@
+# Small rotating-fold experiment; not an independent test benchmark.
+project:
+  name: chinesefoodnet-convnextv2-test
+  num_classes: 208
+  seed: 42
+
+paths:
+  train_dir: ../../data/processed/chinesefoodnet/train
+  val_dir: ../../data/processed/chinesefoodnet/val
+  test_dir: ../../data/processed/chinesefoodnet/test
+  class_names_file: ../../data/metadata/class_names.csv
+  output_dir: ../../outputs/convnextv2_base_test
+  checkpoint_path: ../../outputs/convnextv2_base_test/best.pth
+  latest_checkpoint_path: ../../outputs/convnextv2_base_test/latest_checkpoint.pth
+
+model:
+  name: convnextv2_base.fcmae_ft_in22k_in1k
+  pretrained: true
+  pretrained_checkpoint: null
+  img_size: 224
+
+data:
+  class_limit: 32
+  max_samples_per_class: 120
+
+train:
+  epochs: 10
+  batch_size: 32
+  num_workers: 8
+  learning_rate: 0.00005
+  weight_decay: 0.0005
+
+cross_validation:
+  enabled: true
+  fold_count: 5
+  fold_epochs: 2
+
+resume:
+  auto_resume: true
+
+inference:
+  top_k: 5

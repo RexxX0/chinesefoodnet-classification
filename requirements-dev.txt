@@ -1,0 +1,5 @@
+-r food-classifier/requirements.txt
+-r food-web/requirements.txt
+pytest>=8,<9
+ruff>=0.9,<1
+httpx>=0.27,<1

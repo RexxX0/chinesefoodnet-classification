@@ -1,0 +1,39 @@
+# Python and local tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local.yaml
+
+# Downloaded data, models, binaries and runtime output
+data/raw/
+data/processed/
+checkpoints/
+outputs/
+logs/
+cloud_logs/
+bin/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+*.exe
+*.log
+events.out.tfevents.*

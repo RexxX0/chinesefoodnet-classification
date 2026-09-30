@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChineseFoodNet - Chinese Food Recognition</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🥢</span>
+      <h1>ChineseFoodNet</h1>
+      <span class="tag">208-class Chinese Food Recognition</span>
+    </div>
+    <div class="status" id="status">
+      <span class="status-dot" id="status-dot"></span>
+      <span id="status-text">checking...</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="upload-section">
+      <div class="dropzone" id="dropzone" tabindex="0">
+        <input type="file" id="file-input" accept="image/png,image/jpeg,image/webp,image/bmp" hidden />
+        <div class="dz-content" id="dz-content">
+          <div class="dz-icon">📷</div>
+          <p class="dz-title">Click or drag an image here</p>
+          <p class="dz-sub">JPG / PNG / WEBP / BMP supported &middot; max 10 MB</p>
+          <p class="dz-hint">Tip: you can also paste an image with <kbd>Ctrl</kbd>+<kbd>V</kbd></p>
+        </div>
+        <img id="preview" alt="Uploaded dish preview" />
+      </div>
+      <div class="actions">
+        <button id="predict-btn" class="btn btn-primary" disabled>Identify Dish</button>
+        <button id="reset-btn" class="btn btn-ghost" disabled>Clear</button>
+        <label class="topk-label">
+          Top-K:
+          <input type="number" id="topk" value="5" min="1" max="20" />
+        </label>
+      </div>
+    </section>
+
+    <section class="results-section" id="results-section">
+      <div class="results-header">
+        <h2>Predictions</h2>
+        <span id="elapsed" class="elapsed"></span>
+      </div>
+      <div id="results" class="results"></div>
+      <div class="placeholder" id="placeholder">Upload a photo of a Chinese dish to get the Top-K predictions.</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Powered by ConvNeXt V2 + FastAPI</span>
+    <a href="/docs" target="_blank">API Docs</a>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

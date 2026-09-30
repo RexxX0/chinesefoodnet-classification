@@ -1,0 +1,41 @@
+# Byte-compiled / optimized
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Model checkpoints (large files - distribute via release/LFS, not git)
+checkpoints/
+*.pth
+*.pt
+*.safetensors
+*.bin
+*.ckpt
+
+# Downloaded binaries (cloudflared, etc.) - re-download via scripts/install_cloudflared.*
+bin/
+
+# Logs / runtime
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
